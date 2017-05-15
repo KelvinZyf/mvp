@@ -79,34 +79,32 @@ public class HomeActivity extends BaseActivity {
         final List<String> titleList = new ArrayList<>();
         titleList.add(getString(R.string.movie_title));
         titleList.add(getString(R.string.book_title));
-
         IDouBanAdapter adapter = new IDouBanAdapter(getSupportFragmentManager(),fragmentList,titleList);
         viewPager.setAdapter(adapter);
 
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                toolbar.setTitle(titleList.get(position));
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-
-
         if (tabLayout != null){
-            tabLayout.addTab(tabLayout.newTab());
-            tabLayout.addTab(tabLayout.newTab());
-            tabLayout.setupWithViewPager(viewPager);
+
+            tabLayout.setupWithViewPager(viewPager,true);
+            tabLayout.setTabsFromPagerAdapter(adapter);
         }
+
+//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                toolbar.setTitle(titleList.get(position));
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
+
     }
 
     /**

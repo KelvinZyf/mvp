@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true">
+
+        <com.example.kelvin.example.widget.CustomDrawableRadioButton
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="首页"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/text_gray"
+            android:drawablePadding="10dp"
+            app:topImage="@drawable/item_home"
+            app:imageWidth="35dp"
+            app:imageHeight="35dp"/>
+
+        <com.example.kelvin.example.widget.CustomDrawableRadioButton
+            android:id="@+id/news"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="消息"
+            android:gravity="center"
+            android:button="@null"
+            android:drawablePadding="10dp"
+            app:topImage="@drawable/item_home"
+            app:imageWidth="35dp"
+            app:imageHeight="35dp"/>
+
+        <com.example.kelvin.example.widget.CustomDrawableRadioButton
+            android:id="@+id/me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="我的"
+            android:gravity="center"
+            android:button="@null"
+            android:drawablePadding="10dp"
+            app:topImage="@drawable/item_home"
+            app:imageWidth="35dp"
+            app:imageHeight="35dp"/>
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/note"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@color/colorAccent"
+        android:layout_alignTop="@id/select"
+        />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/select"
+        android:background="@color/colorPrimary"/>
+</RelativeLayout>

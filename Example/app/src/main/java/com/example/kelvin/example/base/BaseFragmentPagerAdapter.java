@@ -3,8 +3,6 @@ package com.example.kelvin.example.base;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.List;
 
@@ -39,15 +37,10 @@ public class BaseFragmentPagerAdapter extends FragmentPagerAdapter {
         String titleName = mFragmentTitles.get(position);
         return titleName;
     }
+//      这个方法是pagerAdapter必须的，在FragmentPagerAdapter中不可以重写
+//    @Override
+//    public boolean isViewFromObject(View view, Object object) {
+//        return view == object;
+//    }
 
-    @Override
-    public boolean isViewFromObject(View view, Object object)
-    {
-        return view == object;
-    }
-
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        super.destroyItem(container, position, object);
-    }
 }
